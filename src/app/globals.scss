@@ -1,0 +1,128 @@
+@use "media-queries.scss" as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+/* #sidebar-menu-small .menu {
+  :where(li ul):before {
+    width: 0;
+  }
+  > li {
+    > details[open] {
+      > summary {
+        @apply bg-white/40 shadow-md;
+      }
+      > ul {
+        @apply bg-white/40 rounded-xl;
+      }
+    }
+  }
+  li {
+    > :not(ul, .menu-title, details, .btn) {
+      &.active {
+        @apply bg-white/40 text-gray-700 font-semibold;
+      }
+    }
+    > a,
+    details > summary {
+      @apply px-4 py-4 rounded-xl mb-1;
+      &:hover {
+        @apply bg-white/40 text-gray-700;
+      }
+    }
+    > details {
+      &[open] > summary {
+        @apply text-gray-700;
+      }
+      ul {
+        @apply ms-0 ps-0 mb-1;
+      }
+    }
+  }
+} */
+
+#sidebar-menu-large {
+  @apply lg:w-80 bg-gradient-to-b from-slate-300 to-slate-100;
+  &.minimize {
+    @apply lg:w-24;
+    li {
+      .title {
+        @apply hidden;
+      }
+      &:hover {
+        // @apply lg:w-80 bg-white/80 rounded-xl text-gray-700;
+        // ul & {
+        //   @apply absolute;
+        // }
+      }
+    }
+  }
+  .menu-large {
+    > li {
+      details {
+        &[open] {
+          > ul {
+            @apply bg-white/40 rounded-xl;
+          }
+          > summary {
+            @apply bg-white/40 text-gray-700 cursor-pointer;
+            > .caret {
+              @apply rotate-180 transition ease-out duration-200;
+            }
+          }
+        }
+        > .caret {
+          @apply transition ease-out duration-200;
+        }
+      }
+    }
+    li {
+      a,
+      details > summary {
+        @apply p-4 rounded-xl flex flex-row items-center justify-start mb-1 cursor-pointer space-x-2;
+        &:hover,
+        &.active {
+          @apply bg-white/40 text-gray-700;
+        }
+        &.active {
+          @apply text-gray-900;
+        }
+        .title {
+          @apply flex-1;
+        }
+        .icon {
+          @apply justify-center flex;
+        }
+      }
+    }
+  }
+}
